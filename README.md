@@ -37,5 +37,3 @@ or
 ```
 $ slack-wifi-status --config=~/hoge.toml
 ```
-
-
