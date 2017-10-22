@@ -3,7 +3,7 @@
 ## Install
 
 ```
-go install github.com/polidog/slack-wifi-status/cmd
+go get github.com/polidog/slack-wifi-status
 ```
 
 ## Setting
@@ -29,7 +29,7 @@ token = "your-slack-token"
 ## Use
 
 ```
-$ slack-wifi-status
+$ go run $GOPATH/srcslack-wifi-status
 ```
 
 
