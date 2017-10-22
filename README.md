@@ -2,9 +2,9 @@
 
 ## Install
 
-```
-go get github.com/polidog/slack-wifi-status
-```
+download file.
+[Mac](https://github.com/polidog/slack-wifi-status/releases/download/v0.0.3/slack-wifi-status_darwin_amd64.zip)  
+Unsupported Windows and Linux.
 
 ## Setting
 
@@ -29,7 +29,7 @@ token = "your-slack-token"
 ## Use
 
 ```
-$ go run $GOPATH/srcslack-wifi-status
+$ slack-wifi-status
 ```
 
 
