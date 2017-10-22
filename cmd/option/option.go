@@ -1,8 +1,12 @@
 package option
 
 import (
+	"fmt"
+	"log"
 	"os"
+	"path/filepath"
 	"runtime"
+	"strings"
 )
 
 type Option struct {
@@ -11,10 +15,18 @@ type Option struct {
 }
 
 func (o Option) GetFilename() string {
+	homedir := homeDir()
 	if len(o.Filename) > 0 {
-		return o.Filename
+		path, err := filepath.Abs(o.Filename)
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		wd, _ := os.Getwd()
+		return strings.Replace(path, fmt.Sprintf("%s/~", wd), homedir, 1)
 	}
-	return homeDir() + "/.slack-wifi-status.toml"
+
+	return filepath.Join(homedir, ".slack-wifi-status.toml")
 }
 
 func homeDir() string {
@@ -26,4 +38,8 @@ func homeDir() string {
 		return home
 	}
 	return os.Getenv("HOME")
+}
+
+func replaceUserDirectry(path string) string {
+	return path
 }

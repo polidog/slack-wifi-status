@@ -15,6 +15,7 @@ func Run(config config.Config) {
 
 		if status.Check() {
 			wifi, err := config.FindWifi(status.WifiName)
+
 			if err != nil {
 				log.Fatal(err)
 			}

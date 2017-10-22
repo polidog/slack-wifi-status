@@ -14,8 +14,6 @@ const version = "0.0.1"
 var cmdOption option.Option
 
 func main() {
-	fmt.Println("start main")
-
 	parser := flags.NewParser(&cmdOption, flags.Default)
 	parser.Name = "slack-wifi-status"
 	_, err := parser.Parse()
@@ -37,7 +35,7 @@ func run(filename string) {
 	config, err := config.NewConfig(filename)
 
 	if err != nil {
-		fmt.Println(err)
+		log.Fatal(err)
 	}
 
 	app.Run(config)

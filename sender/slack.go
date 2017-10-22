@@ -27,10 +27,11 @@ func (s Slack) Send(status status.Status) error {
 
 	client := &http.Client{}
 	r, _ := http.NewRequest("POST", fmt.Sprintf("%s", apiUrl), bytes.NewBufferString(data.Encode()))
+
 	r.Header.Add("Content-Type", "application/x-www-form-urlencoded")
 
 	_, err := client.Do(r)
-	fmt.Println(err)
+
 	if err != nil {
 		return err
 	}

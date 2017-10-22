@@ -2,7 +2,6 @@ package status
 
 import (
 	"encoding/json"
-	"fmt"
 	"github.com/polidog/slack-wifi-status/wifi"
 )
 
@@ -17,7 +16,6 @@ func (s Status) ToJSON() string {
 	if err != nil {
 		return ""
 	}
-	fmt.Println(string(json))
 	return string(json)
 }
 
