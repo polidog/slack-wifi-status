@@ -8,7 +8,7 @@ Unsupported Windows and Linux.
 
 ## Setting
 
-```config.toml
+```
 // ~/.slack-wifi-status.toml
 
 [slack]
@@ -30,6 +30,12 @@ token = "your-slack-token"
 
 ```
 $ slack-wifi-status
+```
+
+or 
+
+```
+$ slack-wifi-status --config=~/hoge.toml
 ```
 
 
