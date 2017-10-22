@@ -31,3 +31,5 @@ token = "your-slack-token"
 ```
 $ slack-wifi-status
 ```
+
+
