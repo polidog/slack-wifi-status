@@ -15,5 +15,6 @@ deploy:
   file: "$TRAVIS_BUILD_DIR/dist/**/*.{tar.gz,zip}"
   on:
     tags: true
+    all_branches: true
     repo: polidog/slack-wifi-status
     condition: "$TRAVIS_TAG =~ ^v[0-9].*$"
