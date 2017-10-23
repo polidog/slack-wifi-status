@@ -12,6 +12,8 @@ import (
 type Option struct {
 	Version  bool   `long:"version" description:"Show version"`
 	Filename string `short:"c" long:"config" description:"Filename file name."`
+	Log      bool   `long:"log" description:"Log output"`
+	Time     int    `long:"time" description:"check time"`
 }
 
 func (o Option) GetFilename() string {
@@ -29,6 +31,13 @@ func (o Option) GetFilename() string {
 	return filepath.Join(homedir, ".slack-wifi-status.toml")
 }
 
+func (o Option) GetTime() int {
+	if o.Time < 1 {
+		return 60
+	}
+	return o.Time
+}
+
 func homeDir() string {
 	if runtime.GOOS == "windows" {
 		home := os.Getenv("HOMEDRIVE") + os.Getenv("HOMEPATH")
@@ -38,8 +47,4 @@ func homeDir() string {
 		return home
 	}
 	return os.Getenv("HOME")
-}
-
-func replaceUserDirectry(path string) string {
-	return path
 }

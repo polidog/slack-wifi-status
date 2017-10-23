@@ -37,3 +37,10 @@ or
 ```
 $ slack-wifi-status --config=~/foo.toml
 ```
+
+
+### help
+
+```
+$ slack-wifi-status -h
+```

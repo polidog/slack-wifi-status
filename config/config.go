@@ -9,6 +9,8 @@ type Config struct {
 	Slack    Slack    `toml:"slack"`
 	WifiList WifiList `toml:"wifi"`
 	isLoaded bool
+	LogOutput bool
+	Time int
 }
 
 func (c *Config) load(filename string) error {

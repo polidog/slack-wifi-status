@@ -26,17 +26,17 @@ func main() {
 	case cmdOption.Version:
 		fmt.Printf("%s \n", version)
 	default:
-		run(cmdOption.GetFilename())
+		run(cmdOption.GetFilename(), cmdOption.Log, cmdOption.GetTime())
 	}
 
 }
 
-func run(filename string) {
+func run(filename string, logFlag bool, time int) {
 	config, err := config.NewConfig(filename)
-
 	if err != nil {
-		log.Fatal(err)
+		log.Fatalf("config not loaded. %v", err)
 	}
-
+	config.LogOutput = logFlag
+	config.Time = time
 	app.Run(config)
 }
