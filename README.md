@@ -2,8 +2,7 @@
 
 ## Install
 
-download file.
-[Mac](https://github.com/polidog/slack-wifi-status/releases/download/v0.0.3/slack-wifi-status_darwin_amd64.zip)  
+download file is [here](https://github.com/polidog/slack-wifi-status/releases).  
 Unsupported Windows and Linux.
 
 ## Setting
