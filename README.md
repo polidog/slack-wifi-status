@@ -1,5 +1,7 @@
 # slack-wifi-status
 
+slack-wifi-status is command to change slack status by connecting WiFi. 
+
 ## Install
 
 download file is [here](https://github.com/polidog/slack-wifi-status/releases).  
