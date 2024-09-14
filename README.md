@@ -9,7 +9,7 @@ Unsupported Windows and Linux.
 
 ## Setting
 
-```
+```toml
 // ~/.slack-wifi-status.toml
 
 [slack]
