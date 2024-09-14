@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # Ubuntuでクロスコンパイルを行う
     steps:
       - name: Check out the repository
         uses: actions/checkout@v3
@@ -24,7 +24,8 @@ jobs:
         run: go get -u github.com/laher/goxc
 
       - name: Build for macOS
-        run: goxc -d=dist -bc=darwin -tasks=clean-destination,xc,archive,rmbin
+        run: |
+          GOOS=darwin GOARCH=amd64 goxc -d=dist -tasks=clean-destination,xc,archive,rmbin
 
       - name: Archive build artifacts
         uses: actions/upload-artifact@v3
@@ -51,3 +52,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         if: startsWith(github.ref, 'refs/tags/v')
+
